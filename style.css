@@ -1,0 +1,32 @@
+:root{--navy:#102a56;--teal:#16a6a3;--pink:#ff4f91;--pale:#f2f8ff;--gold:#ffd166}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(135deg,#dff7f6,#fce7f1);color:var(--navy)}
+main{max-width:1050px;margin:auto;padding:16px}
+header{background:linear-gradient(120deg,#102a56,#1c6388);color:white;border-radius:22px;padding:20px;margin-bottom:14px;box-shadow:0 8px 24px #17375b25}
+h1{margin:0;font-size:clamp(1.65rem,5vw,2.7rem);line-height:1.05} header p{margin:8px 0 0;opacity:.92}
+.panel{background:#ffffffeb;border:1px solid #d7e7f2;border-radius:18px;padding:16px;box-shadow:0 5px 18px #17375b12;margin-bottom:14px}
+.row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1;min-width:180px}
+button,input{font:inherit}button{border:0;border-radius:12px;padding:11px 15px;font-weight:800;cursor:pointer;transition:.15s}button:hover{transform:translateY(-1px)}button:focus-visible{outline:3px solid var(--gold)}
+.primary{background:var(--pink);color:white}.secondary{background:#e7f4ff;color:var(--navy);border:1px solid #bfd9ef}.good{background:#dff8ec;color:#126849}.hide{display:none!important}
+input{padding:11px;border:1px solid #b9cddd;border-radius:10px;width:100%;margin:5px 0 10px}
+.hud{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}.metric{background:#f0f7ff;border-radius:12px;padding:10px;text-align:center}.metric small{display:block;color:#55708b}.metric strong{font-size:1.2rem}
+.track{height:330px;position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(#b9e5f9 0 28%,#b4d9a0 28% 42%,#454d5b 42% 100%);border:3px solid white}
+.sun{position:absolute;right:8%;top:16px;width:45px;height:45px;border-radius:50%;background:#ffe28a;box-shadow:0 0 28px #ffe28a88}
+.building{position:absolute;top:50px;left:6%;width:95px;height:86px;background:#d5e7f6;border:4px solid #8caec9;border-bottom:0}
+.building:before{content:"✚ HOSPITAL";position:absolute;top:12px;left:5px;background:#fff;color:#d83c62;font-size:12px;font-weight:900;padding:4px}
+.road{position:absolute;left:23%;width:54%;height:100%;background:#424957;border-left:7px solid #f8f7df;border-right:7px solid #f8f7df}
+.road:before,.road:after{content:"";position:absolute;top:-80px;bottom:-80px;width:5px;background:repeating-linear-gradient(to bottom,#fff 0 24px,transparent 24px 48px);animation:roadmove .5s linear infinite}
+.road:before{left:33%}.road:after{left:66%}
+@keyframes roadmove{to{background-position-y:48px}}
+.car{position:absolute;width:42px;height:64px;border-radius:12px 12px 8px 8px;border:3px solid #fff;box-shadow:0 4px 7px #1116;z-index:3}
+.player{bottom:20px;background:linear-gradient(90deg,#ff4f91,#ff91b8);left:calc(50% - 21px)}
+.car:before{content:"";position:absolute;left:7px;right:7px;top:9px;height:17px;border-radius:5px;background:#c9f3ff;border:2px solid #ffffffaa}
+.car:after{content:"";position:absolute;left:5px;right:5px;bottom:5px;height:7px;border-radius:3px;background:#c52e65}
+.obstacle{background:linear-gradient(90deg,#3579c9,#75b5ef)}
+.obstacle:after{background:#ffda75}
+.track-label{position:absolute;top:8px;left:8px;background:#102a56dd;color:white;padding:5px 9px;border-radius:9px;font-size:.85rem;z-index:5}
+.track-msg{position:absolute;bottom:6px;left:0;right:0;text-align:center;color:white;text-shadow:0 2px 4px #000;font-weight:800;z-index:4}
+.controls{display:flex;gap:8px;justify-content:center;margin-top:10px}.controls button{min-width:64px;font-size:1.2rem}
+.question-title{font-size:1.1rem;font-weight:850;margin:0 0 12px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:8px}.answers button{text-align:left;background:#edf5ff;color:#17375b;border:1px solid #c7dced}.answers button:hover{background:#d9f5f2}.answers button:disabled{opacity:.65;cursor:default}
+.feedback{font-weight:750;min-height:28px;margin-top:10px}.rounds{display:flex;gap:8px;margin-bottom:12px}.round{flex:1;border-radius:10px;background:#e9eff8;padding:8px;text-align:center;font-size:.88rem;font-weight:800}.round.active{background:#d6f7f0;border:2px solid var(--teal)}
+.note{font-size:.9rem;color:#516a83}.result{text-align:center;padding:20px}.result h2{font-size:2rem;margin:0 0 8px}
+@media(max-width:560px){main{padding:10px}.hud{grid-template-columns:1fr 1fr}.track{height:300px}.road{left:17%;width:66%}.answers{grid-template-columns:1fr}.rounds{flex-direction:column}.controls button{flex:1}}
