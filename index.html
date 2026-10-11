@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Obstetracar: ¡La vida no espera!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <h1>🚑 OBSTETRACAR</h1>
+  <p><strong>¡La vida no espera!</strong> Responde, esquiva el tráfico y llega al hospital a tiempo.</p>
+</header>
+
+<section id="start" class="panel">
+  <h2>Tu misión, conductora</h2>
+  <p>Una gestante necesita llegar al hospital. Cada respuesta correcta te da un impulso; una incorrecta reduce tu velocidad. ¡Evita los vehículos y completa las tres rondas!</p>
+  <label for="playerName"><strong>Nombre de la conductora (opcional)</strong></label>
+  <input id="playerName" maxlength="24" placeholder="Ej. Obstetra en formación">
+  <div class="row">
+    <div><strong>⌨️ Controles</strong><p class="note">Flechas ← → o botones para cambiar de carril. En móvil, usa los botones de abajo.</p></div>
+    <div><strong>⏱️ Tiempo limitado</strong><p class="note">Las colisiones consumen tiempo. Si el reloj llega a cero, la misión termina.</p></div>
+  </div>
+  <button class="primary" id="startBtn">🚗 ¡Iniciar misión!</button>
+</section>
+
+<section id="game" class="hide">
+  <div class="rounds">
+    <div class="round active" id="round0">1 · BÁSICA</div><div class="round" id="round1">2 · MEDIA</div><div class="round" id="round2">3 · DIFÍCIL</div>
+  </div>
+  <div class="hud">
+    <div class="metric"><small>⏱️ Tiempo de labor</small><strong id="time">90 s</strong></div>
+    <div class="metric"><small>⚡ Velocidad</small><strong id="speed">60 km/h</strong></div>
+    <div class="metric"><small>⭐ Puntos</small><strong id="score">0</strong></div>
+    <div class="metric"><small>🏥 Progreso</small><strong id="progress">0%</strong></div>
+  </div>
+  <div class="track" id="track" aria-label="Carretera del juego">
+    <div class="sun"></div><div class="building"></div><div class="road"></div>
+    <div class="track-label" id="trackRound">Ronda básica</div>
+    <div id="obstacles"></div>
+    <div class="car player" id="playerCar" aria-label="Auto de la gestante"></div>
+    <div class="track-msg" id="trackMsg">¡Mantén la calma y conduce con atención!</div>
+  </div>
+  <div class="controls">
+    <button class="secondary" id="leftBtn" aria-label="Mover a la izquierda">⬅️</button>
+    <button class="secondary" id="rightBtn" aria-label="Mover a la derecha">➡️</button>
+  </div>
+  <section class="panel" style="margin-top:12px">
+    <p class="question-title" id="question">Pregunta de Obstetricia</p>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback" aria-live="polite"></div>
+    <p class="note" id="questionCount">Pregunta 1 de 5</p>
+  </section>
+</section>
+
+<section id="ending" class="panel result hide">
+  <h2 id="endTitle">¡Misión completada!</h2>
+  <p id="endText"></p>
+  <p><strong id="endScore"></strong></p>
+  <button class="primary" id="againBtn">🔁 Volver a jugar</button>
+</section>
+<p class="note">Juego educativo de repaso. Las preguntas no sustituyen protocolos clínicos, guías vigentes ni la supervisión profesional.</p>
+</main>
+<script src="script.js"></script>
+</body>
+  </html>
+  
